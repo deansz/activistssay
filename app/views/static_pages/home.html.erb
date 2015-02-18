@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>activists say things like</title>
+</head>
+ <p id="demo"></p>
+  
+<script language="JavaScript">
+  
+  
+var adverb = new Array();
+  adverb[0] = "collectively";
+  adverb[1] = "enthusiastically";
+  adverb[2] = "transparently";
+  adverb[3] = "inclusively";
+  
+var verb = new Array();
+  verb[0] = "organise";
+  verb[1] = "engineer";
+  verb[2] = "support";
+  verb[3] = "demand";
+  
+var adjective = new Array();
+  adjective[0] = "an anarchist";
+  adjective[1] = "a feminist";
+  adjective[2] = "an anti-capitalist";
+  adjective[3] = "a non-monogamous";
+  
+var noun = new Array();
+  noun[0] = "protest";
+  noun[1] = "awareness campaign";
+  noun[2] = "solidarity march";
+  noun[3] = "uprising"
+  
+var prepnoun = new Array();
+  prepnoun[0] = "against corporate greed";
+  prepnoun[1] = "against the wage gap";"
+  prepnoun[2] = "against the 99%";
+  prepnoun[3] = "against ocean acidification";
+  prepnoun[4] = "for the last 55 Hector's Dolphins";
+  prepnoun[5] = "for non-binary bathrooms";
+  prepnoun[6] = "for clean energy";
+  prepnoun[7] = "for netizen rights";
+  </script>
+  
+  
+  
+  <!----------------------------------------------------------------------->
+
+ <script>function process(){
+  var sentence = document.getElementById('activistssay');
+  sentence.value = words();
+}
+
+function randomarray(a) {
+  var i;
+  for (i=a.length;i--;) {
+    var j = Math.floor((i+1)*Math.random());
+    var temp = a[i];
+    a[i] = a[j];
+    a[j] = temp;
+  }
+return a;
+}
+
+function words() {
+
+var adverbs = new Array (
+'collectively', 'enthusiastically', 'transparently', 'inclusively'
+);
+
+var verbs = new Array (
+'organise', 'engineer', 'support', 'demand'
+);
+
+var adjectives = new Array (
+'an anarchist', 'a feminist', 'an anti-capitalist', 'a non-monogamous'
+);
+
+var nouns = new Array (
+  'uprising', 'awareness campaign', 'solidarity march', 'protest'
+);
+  
+var prepnouns = new Array (
+  'against corporate greed', 'for the last 55 Hectors Dolphins', 'for clean energy', 'for netizen rights', 'against the wage gap', 'against ocean acidification', 'against John Key' )
+
+     adjectives = randomarray(adjectives);
+     nouns = randomarray(nouns);
+     adverbs = randomarray(adverbs);
+     verbs = randomarray(verbs);
+     prepnouns = randomarray(prepnouns);
+
+     var x;
+
+     var statement = adverbs[adverbs.length-1];
+     adverbs.length -= 1;
+     statement = statement + " " + verbs[verbs.length-1];
+     verbs.length -= 1;
+     statement = statement + " " + adjectives[adjectives.length-1];
+     adjectives.length -= 1;
+     statement = statement + " " + nouns[nouns.length-1];
+     nouns.length -= 1;
+     statement = statement + " " + prepnouns[prepnouns.length-1];
+     prepnouns.length -= 1;
+
+     return statement;
+}
+
+</script>
+  <p style="text-align:center;">
+  <h1>things activists say</h1>
+   <form>
+   <br />
+     <p><input value="activists say" onclick="process()" type="button"></p>
+     <p>we need to:
+     <input type="text" name="activistssay" id="activistssay" size="120" />
+     </p></p>
